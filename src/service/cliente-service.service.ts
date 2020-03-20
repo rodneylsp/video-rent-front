@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Cliente} from '../model/cliente';
-import {Observable} from 'rxjs/Observable';
 
 
 @Injectable({
@@ -16,9 +15,9 @@ export class ClienteServiceService {
     //this.clientesUrl = 'http://localhost:8080/videorent-core-1.0-SNAPSHOT/';
   }
 
-  public findAll():Observable<Cliente[]> {
+  public findAll(){
     //return this.http.get<Cliente[]>(this.clientesUrl);
-    return this.http.get<Cliente[]>('http://localhost:8080/videorent-core-1.0-SNAPSHOT/cliente/get');
+    return this.http.get<any[]>('http://localhost:8080/videorent-core-1.0-SNAPSHOT/cliente/get');
   }
 
   public save(cliente : Cliente){
